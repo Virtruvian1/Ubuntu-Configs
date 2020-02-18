@@ -1,0 +1,5 @@
+System Update:
+>   sudo apt-get dist-upgrade
+
+Remove unneeded packages:
+>   sudo apt autoremove

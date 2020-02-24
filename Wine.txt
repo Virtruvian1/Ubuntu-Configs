@@ -1,0 +1,37 @@
+Install Wine 4.13 in Ubuntu 18.04, Ubuntu 19.04
+
+1. Open terminal either via Ctrl+Alt+T keyboard shortcut or by searching for ‘terminal’ from application menu. When it opens,
+run following commands to download and install the key:
+
+> wget -nc https://dl.winehq.org/wine-builds/winehq.key && sudo apt-key add winehq.key
+
+2. Then add Wine repository for Ubuntu 19.04:
+
+> sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ disco main'
+
+2a. For other Ubuntu releases, replace disco in the code with:
+
+> bionic for Ubuntu 18.04, Linux Mint 19.x
+
+3. Install unmet dependence: faudio
+The wine devel package requires libfaudio0 library which is not available in Ubuntu repositories.
+As a workaround, run command to add the third-party PPA, which offers the packages for Ubuntu 18.04, Ubuntu 19.04.
+
+> sudo add-apt-repository ppa:cybermax-dexter/sdl2-backport
+
+4. Finally run command to install Wine 4.13, which will automatically install the required libfaudio0 libraries.
+
+> sudo apt install --install-recommends winehq-devel
+
+5. Once installed, run "winecfg" to bring up the configuration window and check Wine version.
+
+=============================================================================================================================
+Uninstall:
+
+1. Open Software & Updates and navigate to Other Software tab. Then remove the PPA, and Wine apt repository lines.
+
+2. Remove Wine devel package, run command:
+
+> sudo apt remove --auto-remove winehq-devel
+
+Article Source: http://ubuntuhandbook.org/index.php/2019/08/install-wine-4-13-ubuntu-18-04-ubuntu-19-04/

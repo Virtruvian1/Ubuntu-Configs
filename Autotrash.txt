@@ -1,0 +1,14 @@
+To install Autotrash:
+> Ctrl + Alt + T (Open the terminal)
+> sudo apt install autotrash
+
+To configure Autotrash:
+> EDITOR=nano crontab -e (create a new job)
+[for current user] 
+> @daily /usr/bin/autotrash -d 30 (paste into editor)
+[for all users]
+> @daily /usr/bin/autotrash -td 30 (paste into editor)
+> Ctrl + O (save)
+> Ctrl + X (exit)
+
+Source: https://www.addictivetips.com/ubuntu-linux-tips/automatically-empty-the-trash-on-linux/
